@@ -11,7 +11,7 @@ stack* init_stack (int sz) {
     s->size = sz;
     s->crt = 0;
     s->arr = (int*)malloc(sz*sizeof(int));
-    if (s->arr = NULL) {
+    if (s->arr == NULL) {
         fprintf (stderr, "out of memory");
         free (s);
         return NULL;
@@ -28,26 +28,29 @@ void remove_stack (stack *s) {
     }
     s = NULL;
 }
-/* 
-
-void pop_stack (stack*s, int x) {
+/*
+int is_empty_stack (stack *s) {
+    if (s = NULL);
+}
+*/
+int pop_stack (stack*s) {
+    int x;
     if (s == NULL) {
         printf ("stack doesnt exists\n");
     }
     if (s->crt > 0) {
-        s->crt--;
-        x = s->arr[s->crt];
+        x = s->arr[--s->crt];
     }
+    return x;
 }
 
-void push_stack (stack *s, int x) {
+void push_stack (stack *s, int value) {
     if (s == NULL) {
         printf ("stack doesnt exists\n");
     }
-    s->arr[s->crt] = x;
-    s->crt++;
+    s->arr[s->crt++] = value;
 }
-
+/*
 void print_stack (stack *s) {
     if (s == NULL) {
         printf ("stack doesnt exists\n");
@@ -58,4 +61,4 @@ void print_stack (stack *s) {
     }
 }
 
-int is_empty_stack (stack *s); */
+*/

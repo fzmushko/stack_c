@@ -8,6 +8,10 @@ int main () {
         return -1;
     }
     fprintf (stdout, "Init test passed\n");
+    push_stack (s, 1);
+    if (pop_stack(s) != 1) {
+        fprintf (stdout, "push/pop test failed\n");         
+    }
     remove_stack (s);
 
 
